@@ -7,16 +7,40 @@
     <groupId>com.example</groupId>
     <artifactId>store</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging> <!-- Important: This tells Maven this is a parent POM -->
+    <packaging>pom</packaging>
 
+    <!-- Submodules -->
     <modules>
         <module>Order</module>
         <module>Product</module>
     </modules>
 
-    <!-- You can define properties or dependency management common to all submodules here -->
+    <!-- Define Java version to be inherited by all submodules -->
     <properties>
-        <java.version>17</java.version> <!-- This can be shared across submodules -->
+        <java.version>17</java.version>
     </properties>
 
+    <!-- Import Spring Boot dependencies for all submodules -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>3.3.4</version> <!-- Define Spring Boot version here -->
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- Plugin configuration -->
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven Plugin -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
