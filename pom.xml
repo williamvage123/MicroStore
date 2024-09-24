@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>store</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging> <!-- Important: This tells Maven this is a parent POM -->
+
+    <modules>
+        <module>Order</module>
+        <module>Product</module>
+    </modules>
+
+    <!-- You can define properties or dependency management common to all submodules here -->
+    <properties>
+        <java.version>17</java.version> <!-- This can be shared across submodules -->
+    </properties>
+
+</project>
